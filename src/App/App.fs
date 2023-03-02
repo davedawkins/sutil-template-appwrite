@@ -13,15 +13,14 @@ open Types.Schema
 type Session = {
     Server : Server
     User : User
-    }
+}
     with
         static member Create( server, user) = { Server = server; User = user }
 
 type Model = {
-    Seq : int
     Page : Page
     Session : Session  option
-    }
+}
 
 type Message =
     | SignOut
@@ -91,7 +90,6 @@ let init (server : Server) : Model * Cmd<Message> =
 
     let initPage = Home
     {
-        Seq = 0
         Page = initPage
         Session = None
         },
