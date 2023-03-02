@@ -2,7 +2,6 @@ module App
 
 open Sutil
 open type Feliz.length
-open AppwriteSdk
 open Server
 open Sutil.CoreElements
 open Sutil.Styling

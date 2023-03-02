@@ -3,8 +3,6 @@ module Verify
 open System
 open Sutil
 open Server
-open Types
-open type Feliz.length
 
 type Model = {
     Status : string
@@ -49,5 +47,4 @@ let view (sendEmail : bool) (server : Server) =
                 Ev.onClick (fun e -> e.preventDefault(); dispatch SendEmail)
             ]
         ]
-
     ]

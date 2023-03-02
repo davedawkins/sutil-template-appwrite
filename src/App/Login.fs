@@ -4,7 +4,6 @@ open Sutil
 open Feliz
 open type Feliz.length
 open Sutil.Styling
-open UI
 open Types
 open Server
 
@@ -89,11 +88,11 @@ let style = [
 let view dispatchExternal (server : Server) =
     let model, dispatch = () |> Store.makeElmish init (update server) ignore
 
-    UI.divc "login" [
+    Html.divc "login" [
 
         Html.h2 "Sign In"
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Email" ]
             Html.input [
                 Attr.typeText
@@ -102,7 +101,7 @@ let view dispatchExternal (server : Server) =
             ]
         ]
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Password" ]
             Html.input [
                 Attr.typePassword

@@ -4,7 +4,6 @@ open Sutil
 open Feliz
 open type Feliz.length
 open Sutil.Styling
-open UI
 open Types
 open Server
 
@@ -14,7 +13,6 @@ type Model = {
     Name : string
     Verification : string
     Status : string
-    //RegistrationCompleted : bool
 }
 
 type Message =
@@ -125,11 +123,11 @@ let successClass status = if status then "success" else "error"
 let view dispatchExternal (server : Server) =
     let model, dispatch = () |> Store.makeElmish init (update dispatchExternal server) ignore
 
-    UI.divc "register" [
+    Html.divc "register" [
 
         Html.h2 "Register New Account"
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Name" ]
             Html.input [
                 Attr.name "name"
@@ -141,7 +139,7 @@ let view dispatchExternal (server : Server) =
             ]
         ]
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Email" ]
             Html.input [
                 Attr.name "email"
@@ -153,7 +151,7 @@ let view dispatchExternal (server : Server) =
             ]
         ]
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Password" ]
             Html.input [
                 Attr.name "password"
@@ -165,7 +163,7 @@ let view dispatchExternal (server : Server) =
             ]
         ]
 
-        UI.divc "label-input" [
+        Html.divc "label-input" [
             Html.label [ text "Verify Password" ]
             Html.input [
                 Attr.name "verify"
