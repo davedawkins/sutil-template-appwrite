@@ -1,0 +1,2 @@
+# Sutil Template for Appwrite
+
